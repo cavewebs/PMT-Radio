@@ -1,0 +1,291 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>PMT Radio</title> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.2.0.min.css" />
+    <link rel="stylesheet" href="mullinax.min.css" />
+    <link rel="stylesheet" href="photoswipe.css" />
+    <link rel="stylesheet" href="chapter7.css" />
+    <link rel="stylesheet" href="" id="rotatingBackgrounds" />
+    <script type="text/javascript">document.getElementById("rotatingBackgrounds").href=("rotating" + Math.floor(Math.random()*4) + ".css")</script>
+    <link href='http://fonts.googleapis.com/css?family=Euphoria+Script' rel='stylesheet' type='text/css'>
+    
+    <script src="js/klass.min.js"></script>
+	<script src="js/jquery.js"></script>
+    <script src="js/global.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script src="js/code.photoswipe.galleryinit.js"></script>
+   	<script type="text/javascript">
+	
+		$(window).bind("orientationchange", function(event){
+			$("body").removeClass("portrait").removeClass("landscape").addClass(event.orientation);
+			resizeContentHeight();
+		});
+		
+		$(window).bind("resize", function(){
+			resizeContentHeight();
+		});
+		
+		$(document).ready(function(e) {
+			var width = $(window).width();
+			var height = $(window).height();
+			if( width > height){ 
+				$("body").addClass("landscape");					
+			}else{ 
+				$("body").addClass("portrait");
+			}
+			resizeContentHeight();
+		});
+		
+		function resizeContentHeight(){
+			var width = $(window).width();
+			var height = $(window).height();
+			if(width >= 1024){
+				$.mobile.activePage.find(".textContainer").css({"height":(height - 120)});
+			}else{
+				$.mobile.activePage.find(".textContainer").css({"height":"auto"});
+			}
+		}
+	</script>
+</head> 
+
+<body> 
+
+<div id="home" data-role="page">
+  	<div data-role="header" id="player" data-position="fixed">	
+    <div align="left" style="max-width:40%; width:35%; float:left">
+        <img class="logo" src="images/logo.png" border="0" alt="PMT Radio" /> </div>
+    <div align="right" style="float:right; max-width:40%">
+
+    <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+<script type="text/javascript" src="http://hosted.musesradioplayer.com/mrp.js"></script>
+<script type="text/javascript">
+MRP.insert({
+'url':'http://gemini.shoutca.st:8262/stream',
+'codec':'mp3',
+'volume':60,
+'autoplay':true,
+'buffering':5,
+'title':'Play My Track Radio',
+'welcome':'...we love to play your Track',
+'bgcolor':'#FFFFFF',
+'skin':'darkconsole',
+'width':190,
+'height':62
+});
+</script></div><br />
+<div align="center">
+Current song: <a href="https://gemini.shoutca.st/tunein/chosetim.pls" id="cc_strinfo_song_chosetim" class="cc_streaminfo">Loading ...</a>
+</div>
+</div>
+	<div data-role="content">	
+        	<div class="textContainer" > 
+
+Stream title: <span id="cc_strinfo_title_chosetim" class="cc_streaminfo"></span><br />
+Bit rate: <span id="cc_strinfo_bitrate_chosetim" class="cc_streaminfo"></span><br />
+Current listeners: <span id="cc_strinfo_listeners_chosetim" class="cc_streaminfo"></span><br />
+
+Station time: <span id="cc_strinfo_date_chosetim" class="cc_streaminfo"></span> <span id="cc_strinfo_time_chosetim" class="cc_streaminfo"></span><br />
+Current playlist: <span id="cc_strinfo_playlist_chosetim" class="cc_streaminfo"></span> <span id="cc_strinfo_playlist_chosetim" class="cc_streaminfo"></span><br />
+Track details: <span id="cc_strinfo_trackartist_chosetim" class="cc_streaminfo"></span> - <span id="cc_strinfo_tracktitle_chosetim" class="cc_streaminfo"></span> - <span id="cc_strinfo_trackalbum_chosetim" class="cc_streaminfo"></span><br />
+Raw metadata: <span id="cc_strinfo_rawmeta_chosetim" class="cc_streaminfo"></span><br />
+Album image:<br /><img id="cc_strinfo_trackimageurl_chosetim" class="cc_streaminfo" /><br /></div>
+<script language="javascript" type="text/javascript" src="https://gemini.shoutca.st/system/streaminfo.js"></script>
+<!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE 
+    	<div class="artisticNav">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#gallery">Portraits</a></li> 
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="#familes">Proofs</a></li> 
+            </ul>
+        </div>-->
+	</div><!-- /content -->
+    <div data-role="footer">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#request">Requests</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">About</a></li>
+            </ul>
+        </div><!-- /navbar -->   
+    </div>
+</div><!-- /page -->
+
+<div id="request" data-role="page">
+    <div class="logoContainer">
+        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Song Request" border="0" /></a>
+    </div>
+	<div data-role="content">	
+    	<div class="textContainer ">
+        	<h3>PMT Radio Song Request</h3>  
+            <div id="cc_req_result_chosetim"></div>
+<form>
+Song artist: <input type="text" id="cc_req_artist_chosetim" name="request[artist]" size="40" maxlength="127" /><br />
+Song title: <input type="text" id="cc_req_title_chosetim" name="request[title]" size="40" maxlength="127" /><br />
+Dedicated to: <input type="text" id="cc_req_dedi_chosetim" name="request[dedication]" size="40" maxlength="127" /><br />
+Your name: <input type="text" id="cc_req_sender_chosetim" name="request[sender]" size="40" maxlength="127" /><br />
+Your E-mail: <input type="text" id="cc_req_email_chosetim" name="request[email]" size="40" maxlength="127" /><br />
+<input type="button" id="cc_req_button_chosetim" class="cc_request_form" value="Submit song request" /><br />
+</form>
+
+<script language="javascript" type="text/javascript" src="https://gemini.shoutca.st/system/request.js"></script>
+        </div>
+	</div><!-- /content -->
+    <div data-role="footer">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                 <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#request">Requests</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">About</a></li>
+            </ul>
+        </div><!-- /navbar -->   
+    </div>
+</div><!-- /page -->
+
+<div id="schedule" data-role="page">
+    <div class="logoContainer">
+        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Schedule" border="0" /></a>
+    </div>
+    
+	<div data-role="content">	
+    <h3>PMT Radio Schedule </h3>
+    <div class="artisticNav">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#babies">Monday</a></li> 
+                <li><a href="#babies">Tuesday</a></li> 
+                <li><a href="#babies">Wednesday</a></li> 
+                <li><a href="#familes">Thursday</a></li> 
+                <li><a href="#familes">Friday</a></li> 
+                <li><a href="#familes">Saturday</a></li> 
+            </ul>
+        </div>
+	</div><!-- /content -->
+    <div data-role="footer">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#request">Requests</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">About</a></li>
+            </ul>
+        </div><!-- /navbar -->   
+    </div>
+</div><!-- /page -->
+
+
+
+<div id="news" data-role="page">
+    <div class="logoContainer">
+        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio News" border="0" /></a>
+    </div>
+	<div data-role="content">	
+    	<div class="textContainer ui-shadow">
+        	<h3>Latest News</h3>
+            
+            
+            
+        </div>
+	</div><!-- /content -->
+    <div data-role="footer">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                 <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#request">Requests</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">About</a></li>
+            </ul>
+        </div><!-- /navbar -->   
+    </div>
+</div><!-- /page -->
+
+<div id="contact" data-role="page">
+    <div class="logoContainer">
+        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Schedule" border="0" /></a>
+    </div>
+	<div data-role="content">	
+<h3>    About us</h3>
+
+    	<div class="artisticNav">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#about">About</a></li> 
+                <li><a href="#contact_form">Contact</a></li> 
+                            </ul>
+        </div>
+	</div><!-- /content -->
+    <div data-role="footer">
+        <div data-role="navbar" data-position="fixed">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#request">Requests</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">About</a></li>
+            </ul>
+        </div><!-- /navbar -->   
+    </div>
+</div><!-- /page -->
+
+
+
+
+
+
+<div data-role="page" data-add-back-btn="true" id="babies" class="gallery-page">
+	<div data-role="header">
+		<h1>Babies</h1>
+	</div> 
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/full/babies1.jpg" rel="external"><img src="images/thumb/babies1.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies2.jpg" rel="external"><img src="images/thumb/babies2.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies3.jpg" rel="external"><img src="images/thumb/babies3.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies4.jpg" rel="external"><img src="images/thumb/babies4.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies5.jpg" rel="external"><img src="images/thumb/babies5.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies6.jpg" rel="external"><img src="images/thumb/babies6.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies7.jpg" rel="external"><img src="images/thumb/babies7.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies8.jpg" rel="external"><img src="images/thumb/babies8.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies9.jpg" rel="external"><img src="images/thumb/babies9.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies10.jpg" rel="external"><img src="images/thumb/babies10.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies11.jpg" rel="external"><img src="images/thumb/babies11.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies12.jpg" rel="external"><img src="images/thumb/babies12.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies13.jpg" rel="external"><img src="images/thumb/babies13.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies14.jpg" rel="external"><img src="images/thumb/babies14.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies15.jpg" rel="external"><img src="images/thumb/babies15.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies16.jpg" rel="external"><img src="images/thumb/babies16.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies17.jpg" rel="external"><img src="images/thumb/babies17.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies18.jpg" rel="external"><img src="images/thumb/babies18.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies19.jpg" rel="external"><img src="images/thumb/babies19.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies20.jpg" rel="external"><img src="images/thumb/babies20.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies21.jpg" rel="external"><img src="images/thumb/babies21.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies22.jpg" rel="external"><img src="images/thumb/babies22.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies23.jpg" rel="external"><img src="images/thumb/babies23.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies24.jpg" rel="external"><img src="images/thumb/babies24.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies25.jpg" rel="external"><img src="images/thumb/babies25.jpg" alt="baby photography" /></a></li>
+			<li><a href="images/full/babies26.jpg" rel="external"><img src="images/thumb/babies26.jpg" alt="baby photography" /></a></li>
+		</ul>
+	</div>
+</div>
+
+<div data-role="page" data-add-back-btn="true" id="familes" class="gallery-page">
+	<div data-role="header">
+		<h1>Familes</h1>
+	</div>
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/full/010.jpg" rel="external"><img src="images/thumb/010.jpg" alt="Image 010" /></a></li>
+			<!-- ommitted entries for brevity's sake -->
+			<li><a href="images/full/018.jpg" rel="external"><img src="images/thumb/018.jpg" alt="Image 018" /></a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
