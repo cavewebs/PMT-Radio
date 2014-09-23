@@ -106,7 +106,7 @@ Album image:<br /><img id="cc_strinfo_trackimageurl_chosetim" class="cc_streamin
     <div data-role="footer">
         <div data-role="navbar" data-position="fixed">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li class="ui-icon-home"><a href="#home">Home</a></li>
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#request">Requests</a></li>
                 <li><a href="#news">News</a></li>
@@ -117,13 +117,11 @@ Album image:<br /><img id="cc_strinfo_trackimageurl_chosetim" class="cc_streamin
 </div><!-- /page -->
 
 <div id="request" data-role="page">
-    <div class="logoContainer">
-        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Song Request" border="0" /></a>
-    </div>
+<div class="logoContainer" data-role="header">
+        	<h3>Request a Song</h3>  
+  </div>       
 	<div data-role="content">	
-    	<div class="textContainer ">
-        	<h3>PMT Radio Song Request</h3>  
-            <div id="cc_req_result_chosetim"></div>
+    	<div class="textContainer">
 <form>
 Song artist: <input type="text" id="cc_req_artist_chosetim" name="request[artist]" size="40" maxlength="127" /><br />
 Song title: <input type="text" id="cc_req_title_chosetim" name="request[title]" size="40" maxlength="127" /><br />
@@ -150,12 +148,11 @@ Your E-mail: <input type="text" id="cc_req_email_chosetim" name="request[email]"
 </div><!-- /page -->
 
 <div id="schedule" data-role="page">
-    <div class="logoContainer">
-        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Schedule" border="0" /></a>
-    </div>
+    <div class="logoContainer" data-role="header">
+PMT Radio Schedule     </div>
     
 	<div data-role="content">	
-    <h3>PMT Radio Schedule </h3>
+    <h3></h3>
     <div class="artisticNav">
             <ul data-role="listview" data-inset="true">
                 <li><a href="#babies">Monday</a></li> 
@@ -183,12 +180,11 @@ Your E-mail: <input type="text" id="cc_req_email_chosetim" name="request[email]"
 
 
 <div id="news" data-role="page">
-    <div class="logoContainer">
-        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio News" border="0" /></a>
-    </div>
+   <div class="logoContainer" data-role="header">
+        	<h3>Latest News</h3>
+   </div>
 	<div data-role="content">	
     	<div class="textContainer ui-shadow">
-        	<h3>Latest News</h3>
             
             
             
@@ -208,11 +204,10 @@ Your E-mail: <input type="text" id="cc_req_email_chosetim" name="request[email]"
 </div><!-- /page -->
 
 <div id="contact" data-role="page">
-    <div class="logoContainer">
-        <a href="#home"><img class="logo" src="images/logo.png" alt="PMT Radio Schedule" border="0" /></a>
-    </div>
-	<div data-role="content">	
+<div class="logoContainer" data-role="header">
 <h3>    About us</h3>
+  </div>
+	<div data-role="content">	
 
     	<div class="artisticNav">
             <ul data-role="listview" data-inset="true">
